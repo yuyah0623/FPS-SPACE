@@ -86,14 +86,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
-
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
             if (Input.GetKey(KeyCode.C)) {
-                transform.position = new Vector3(transform.position.x, m_DefaultViewHeight - m_DiffViewHeight, transform.position.z);
-            } else {
-                transform.position = new Vector3(transform.position.x, m_DefaultViewHeight, transform.position.z);
+                cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, -0.4f, m_CameraRigPos.z);
+                // m_IsWalking = false;
+            } else if (Input.GetKeyUp(KeyCode.C)) {
+                cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, m_DefaultViewHeight, m_CameraRigPos.z);
             }
-
         }
 
 

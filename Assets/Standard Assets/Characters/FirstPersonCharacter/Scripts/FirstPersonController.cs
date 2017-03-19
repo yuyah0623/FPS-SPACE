@@ -45,6 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private Vector3 m_CameraRigPos;
 
         // Use this for initialization
         private void Start()

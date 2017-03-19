@@ -32,6 +32,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_DefaultViewHeight;
         [SerializeField] private float m_DiffViewHeight;
         [SerializeField] private GameObject cameraRig;
+        [SerializeField] private float SquatDiff;
+
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -88,7 +90,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
             if (Input.GetKey(KeyCode.C)) {
-                cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, -0.4f, m_CameraRigPos.z);
+                cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, SquatDiff, m_CameraRigPos.z);
                 // m_IsWalking = false;
             } else if (Input.GetKeyUp(KeyCode.C)) {
                 cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, m_DefaultViewHeight, m_CameraRigPos.z);

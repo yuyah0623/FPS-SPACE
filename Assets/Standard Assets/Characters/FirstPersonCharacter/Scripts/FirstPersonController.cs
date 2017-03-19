@@ -60,8 +60,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-            m_DefaultViewHeight = transform.position.y;
-        }
+            m_CameraRigPos = cameraRig.transform.localPosition;
+            m_DefaultViewHeight = cameraRig.transform.localPosition.y;
+            }
 
 
         // Update is called once per frame

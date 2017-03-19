@@ -31,7 +31,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
         [SerializeField] private float m_DefaultViewHeight;
         [SerializeField] private float m_DiffViewHeight;
-        [SerializeField] private GameObject cameraRig;
+        [SerializeField] private GameObject firstPersonCharacter;
         [SerializeField] private float SquatDiff;
 
         private Camera m_Camera;
@@ -62,8 +62,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-            m_CameraRigPos = cameraRig.transform.localPosition;
-            m_DefaultViewHeight = cameraRig.transform.localPosition.y;
+            m_CameraRigPos = firstPersonCharacter.transform.localPosition;
+            m_DefaultViewHeight = firstPersonCharacter.transform.localPosition.y;
             }
 
 
@@ -90,10 +90,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
             if (Input.GetKey(KeyCode.C)) {
-                cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, SquatDiff, m_CameraRigPos.z);
+                firstPersonCharacter.transform.localPosition = new Vector3(m_CameraRigPos.x, SquatDiff, m_CameraRigPos.z);
                 // m_IsWalking = false;
             } else if (Input.GetKeyUp(KeyCode.C)) {
-                cameraRig.transform.localPosition = new Vector3(m_CameraRigPos.x, m_DefaultViewHeight, m_CameraRigPos.z);
+                firstPersonCharacter.transform.localPosition = new Vector3(m_CameraRigPos.x, m_DefaultViewHeight, m_CameraRigPos.z);
             }
         }
 

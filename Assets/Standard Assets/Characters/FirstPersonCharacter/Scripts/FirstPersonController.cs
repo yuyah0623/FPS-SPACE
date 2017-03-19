@@ -31,7 +31,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
         [SerializeField] private float m_DefaultViewHeight;
         [SerializeField] private float m_DiffViewHeight;
-
+        [SerializeField] private GameObject cameraRig;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
